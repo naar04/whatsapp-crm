@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>WhatsApp CRM</title>
+
+</head>
+
+<body>
+
+<h1>WhatsApp CRM</h1>
+
+<h2>Statistics</h2>
+
+<p>Total Contacts : {{ total_contacts }}</p>
+
+<p>Total Messages : {{ total_messages }}</p>
+
+<hr>
+
+<h2>Latest Messages</h2>
+
+<table border="1" cellpadding="8">
+
+<tr>
+
+<th>Name</th>
+
+<th>Type</th>
+
+<th>Message</th>
+
+<th>Time</th>
+
+</tr>
+
+{% for m in messages %}
+
+<tr>
+
+<td>{{ m.contact.name }}</td>
+
+<td>{{ m.message_type }}</td>
+
+<td>{{ m.message_text }}</td>
+
+<td>{{ m.created_at }}</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+</body>
+
+</html>
